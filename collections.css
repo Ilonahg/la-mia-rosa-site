@@ -1,0 +1,457 @@
+/* ================= ROOT ================= */
+
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --graphite: #1c1c1c;
+  --soft-gray: #7a7a7a;
+  --accent-red: #7a141e;
+}
+
+/* ================= GLOBAL ================= */
+
+body {
+  background: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+.collections {
+  background: var(--black);
+  overflow: hidden;
+}
+
+/* ================= HEADER GRID FIX ================= */
+
+.header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+}
+
+/* ================= NAV ACTIVE ================= */
+
+.nav a {
+  position: relative;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 28px;
+  height: 1px;
+  background: var(--accent-red);
+  transform: translateX(-50%);
+}
+
+
+.header.scrolled .nav a.active::after {
+  background: var(--accent-red);
+}
+
+/* ================= LANGUAGE SWITCH (PERFECT) ================= */
+
+ 
+/* header light */
+.header.scrolled .lang-switch button {
+  color: rgba(0,0,0,0.45);
+}
+
+.header.scrolled .lang-switch button.active {
+  color: var(--accent-red);
+}
+
+/* ================= HERO ================= */
+
+.collection-hero {
+  position: relative;
+  padding: 180px 90px 220px;
+}
+
+.collection-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 70% 35%,
+      rgba(122,20,30,0.25),
+      transparent 55%
+    ),
+    linear-gradient(to bottom, #0a0a0a, #0b0b0b);
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 120px;
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero-text {
+  max-width: 540px;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(56px, 6vw, 72px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.hero-divider {
+  width: 44px;
+  height: 1px;
+  background: var(--accent-red);
+  margin-bottom: 32px;
+}
+
+.hero-sub {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  line-height: 2;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 26px;
+}
+
+.hero-note {
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  line-height: 2.1;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image {
+  position: relative;
+  max-width: 460px;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0,0,0,0) 40%,
+      rgba(0,0,0,0.85) 100%
+    );
+  pointer-events: none;
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+  filter: brightness(0.65) contrast(0.95) saturate(0.8);
+  opacity: 0.9;
+}
+
+/* ================= LOOKBOOK ================= */
+
+.light-section {
+  background: var(--white);
+  padding: 200px 90px 180px;
+}
+
+.lookbook-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 140px 100px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.look {
+  position: relative;
+}
+
+.product-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.look img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  margin-bottom: 26px;
+  transition: transform 1.6s cubic-bezier(.22,.61,.36,1);
+}
+
+.look:hover img {
+  transform: scale(1.035);
+}
+
+/* VIEW DETAILS */
+
+.view-details {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  font-size: 10px;
+  letter-spacing: 0.34em;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.look:hover .view-details {
+  opacity: 0.85;
+}
+
+/* ================= PRODUCT INFO ================= */
+
+.look-info {
+  padding-left: 2px;
+}
+
+.caption {
+  font-size: 11px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--soft-gray);
+  margin-bottom: 8px;
+}
+
+.micro {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: rgba(0,0,0,0.45);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  padding: 140px 90px 120px;
+  background-color: #0b0b0b; /* глибокий чорний, не pure black */
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* Бренд — найконтрастніший, але не білий */
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 0.24em;
+  color: #e6e3df;
+}
+
+/* Маніфест — приглушений, дуже стильний */
+.footer-note {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  line-height: 2;
+  color: #c9c4be;
+}
+
+/* Copyright — максимально тихий */
+.footer-copy {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: #a8a39d;
+}
+.footer-note {
+  opacity: 0.85;
+}
+
+.footer-copy {
+  opacity: 0.7;
+}
+
+
+@media (max-width: 768px) {
+  .lang-switch {
+    position: absolute;
+    right: 72px;
+    top: 36px;
+  }
+}
+
+/* ================= LUXURY IMAGE FADE ================= */
+
+/* container */
+.product-link {
+  position: relative;
+  overflow: hidden;
+}
+
+/* all images */
+.product-link img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+
+  /* premium smoothness */
+  transition:
+    opacity 0.9s ease,
+    transform 1.6s cubic-bezier(.22,.61,.36,1);
+}
+
+/* secondary image */
+.img-secondary {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hover fade */
+.look:hover .img-primary {
+  opacity: 0;
+}
+
+.look:hover .img-secondary {
+  opacity: 1;
+}
+
+/* subtle zoom */
+.look:hover img {
+  transform: scale(1.035);
+}
+
+/* mobile safety */
+@media (hover: none) {
+  .look:hover .img-primary,
+  .look:hover .img-secondary {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   COLLECTIONS — MOBILE FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ===== ANNOUNCEMENT BAR ===== */
+  .announcement-bar {
+    height: 32px;
+    font-size: 10px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    height: 88px;
+  }
+
+  .header-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  /* ===== COLLECTION HERO ===== */
+  .collection-hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  /* ===== LOOKBOOK GRID ===== */
+  .lookbook {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .lookbook-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+
+  /* ===== LOOKBOOK ITEM ===== */
+  .lookbook-item {
+    width: 100%;
+  }
+
+  .lookbook-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .lookbook-caption {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding-top: 96px;
+    padding-bottom: 72px;
+  }
+}
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 420px) {
+
+  .lookbook-grid {
+    gap: 56px;
+  }
+
+  .lookbook-caption {
+    font-size: 10px;
+  }
+}
+/* =========================================================
+   COLLECTIONS — PROPER MOBILE EDITORIAL FIX
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .lookbook-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+
+  .lookbook-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5; /* editorial crop */
+    object-fit: cover;
+  }
+
+  .lookbook-caption {
+    margin-top: 14px;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-align: center;
+  }
+}

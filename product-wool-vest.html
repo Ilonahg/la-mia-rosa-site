@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tailored Wool Vest — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= FONTS ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+</head>
+
+<body class="product-body">
+
+<!-- =========================================================
+  HEADER
+========================================================= -->
+
+<header class="header header-product">
+  <div class="header-grid">
+
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline" data-i18n="tagline">
+        Modern Luxury Womenswear
+      </span>
+    </a>
+
+    <nav class="nav">
+      <a href="collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="about.html" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="contact.html" data-i18n="nav_reach">Reach Us</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang" data-lang="tr">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="product-page">
+
+<!-- =========================================================
+  HERO
+========================================================= -->
+
+<section class="product-hero fade">
+  <div class="product-hero-grid">
+
+    <!-- PRODUCT INFO -->
+    <div class="product-info">
+
+      <h1 class="product-title" data-i18n="p_title">
+        Tailored Wool Vest
+      </h1>
+
+      <p class="product-tagline" data-i18n="p_tagline">
+        Designed to hold you —<br>
+        not restrict you.
+      </p>
+
+      <div class="product-price">€240</div>
+      <div class="product-rating">★★★★★</div>
+
+      <!-- CTA -->
+      <a
+        href="javascript:void(0)"
+        class="product-cta"
+        data-i18n="cta"
+        onclick="addToCart()"
+      >
+        Add to cart
+      </a>
+
+    </div>
+
+    <!-- PRODUCT IMAGE -->
+    <div class="product-image">
+      <img src="images/product1.jpg" alt="Tailored Wool Vest">
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+  GALLERY
+========================================================= -->
+
+<section class="product-gallery fade">
+  <div class="gallery-item">
+    <a href="#">
+      <img src="images/puffer-vest-2.jpg" alt="Tailored Wool Vest detail">
+    </a>
+  </div>
+</section>
+
+<!-- =========================================================
+  STORY
+========================================================= -->
+
+<section class="product-story fade">
+  <div class="story-inner">
+
+    <h2 class="story-title" data-i18n="idea">The Idea</h2>
+
+    <p class="story-text" data-i18n="story">
+      This piece was created for mornings without rush<br>
+      and evenings that unfold slowly.<br><br>
+      It does not shape the body —<br>
+      it follows it.
+    </p>
+
+  </div>
+</section>
+
+<!-- =========================================================
+  DETAILS
+========================================================= -->
+
+<section class="product-details fade">
+  <div class="details-grid">
+
+    <div class="details-col">
+      <p><strong data-i18n="fabric">Fabric</strong><br>100% Wool</p>
+      <p><strong data-i18n="origin">Origin</strong><br>Italy</p>
+      <p><strong data-i18n="touch">Touch</strong><br>Soft, structured</p>
+      <p><strong data-i18n="season">Season</strong><br>All year</p>
+    </div>
+
+    <div class="details-col">
+      <p><strong data-i18n="fit">Fit</strong><br>Relaxed tailored</p>
+      <p><strong data-i18n="length">Length</strong><br>Hip</p>
+      <p><strong data-i18n="closure">Closure</strong><br>Wrap belt</p>
+      <p><strong data-i18n="care">Care</strong><br>Dry clean only</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+  RELATED PRODUCTS
+========================================================= -->
+
+<section class="product-related fade">
+
+  <!-- TITLE -->
+  <div class="related-header">
+    <h3 class="related-title" data-i18n="also">
+      You may also like
+    </h3>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <div class="related-grid">
+
+    <article class="related-item">
+      <a href="product-fitted-long-sleeve.html">
+        <img src="images/product6.jpg" alt="Second Skin Top">
+      </a>
+      <a href="product-fitted-long-sleeve.html" class="related-name">
+        Second Skin Top
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€140</span>
+      <p class="micro">Second-skin feel · Minimal seams</p>
+    </article>
+
+    <article class="related-item">
+      <a href="product-zip-cardigan.html">
+        <img src="images/product7.jpg" alt="Urban Knit Dress">
+      </a>
+      <a href="product-zip-cardigan.html" class="related-name">
+        Urban Knit Dress
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€290</span>
+      <p class="micro">Urban elegance · Effortless fit</p>
+    </article>
+
+    <article class="related-item">
+      <a href="product-artisan-patchwork.html">
+        <img src="images/product5.jpg" alt="Artisan Patchwork">
+      </a>
+      <a href="product-artisan-patchwork.html" class="related-name">
+        Artisan Patchwork
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€260</span>
+      <p class="micro">Artisan finish · One of few</p>
+    </article>
+
+    <article class="related-item">
+      <a href="product-soft-knit.html">
+        <img src="images/product3.jpg" alt="Soft Knitwear">
+      </a>
+      <a href="product-soft-knit.html" class="related-name">
+        Soft Knitwear
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€190</span>
+      <p class="micro">Natural fibers · Designed in Europe</p>
+    </article>
+
+  </div>
+
+  <!-- VIEW ALL -->
+  <div class="related-view-all">
+    <a href="collections.html">View all</a>
+  </div>
+
+</section>
+
+<!-- =========================================================
+  FOOTER
+========================================================= -->
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer footer--dark">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      LA MIA ROSA
+    </div>
+
+    <div class="footer-note">
+      Designed in silence · Made to endure · Worn with intention
+    </div>
+
+    <div class="footer-copy">
+      2026 © La Mia Rosa. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- =========================================================
+  SCRIPTS
+========================================================= -->
+
+<script>
+/* ================= LANGUAGE ================= */
+
+const translations = {
+  en: {
+    tagline: "Modern Luxury Womenswear",
+    nav_wardrobe: "Wardrobe",
+    nav_philosophy: "Philosophy",
+    nav_reach: "Reach Us",
+    p_title: "Tailored Wool Vest",
+    p_tagline: "Designed to hold you —<br>not restrict you.",
+    cta: "Add to cart",
+    idea: "The Idea",
+    story: "This piece was created for mornings without rush<br>and evenings that unfold slowly.<br><br>It does not shape the body —<br>it follows it.",
+    fabric: "Fabric",
+    origin: "Origin",
+    touch: "Touch",
+    season: "Season",
+    fit: "Fit",
+    length: "Length",
+    closure: "Closure",
+    care: "Care",
+    also: "You may also like",
+    footer_copy: "2026 © La Mia Rosa. All rights reserved.",
+    footer_note: "Designed with intention. Crafted for women who choose less, but better."
+  },
+  tr: {
+    tagline: "Modern Lüks Kadın Giyimi",
+    nav_wardrobe: "Gardırop",
+    nav_philosophy: "Felsefe",
+    nav_reach: "İletişim",
+    p_title: "Özel Dikim Yün Yelek",
+    p_tagline: "Seni tutmak için tasarlandı —<br>sınırlamak için değil.",
+    cta: "Sepete ekle",
+    idea: "Fikir",
+    story: "Bu parça acele olmayan sabahlar ve<br>yavaşça açılan akşamlar için yaratıldı.<br><br>Vücudu şekillendirmez —<br>onu takip eder.",
+    fabric: "Kumaş",
+    origin: "Menşei",
+    touch: "Doku",
+    season: "Sezon",
+    fit: "Kalıp",
+    length: "Uzunluk",
+    closure: "Kapanış",
+    care: "Bakım",
+    also: "Bunları da sevebilirsiniz",
+    footer_copy: "2026 © La Mia Rosa. Tüm hakları saklıdır.",
+    footer_note: "Niyetle tasarlandı. Daha az ama daha iyisini seçen kadınlar için."
+  }
+};
+
+document.querySelectorAll('.lang').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const lang = btn.dataset.lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el.innerHTML = translations[lang][el.dataset.i18n];
+    });
+  });
+});
+
+/* ================= HEADER SCROLL ================= */
+
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 120);
+});
+
+/* ================= FADE ================= */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+/* ================= RELATED SCROLL ================= */
+
+function scrollRelated(dir) {
+  const grid = document.getElementById('relatedGrid');
+  const scrollAmount = grid.offsetWidth;
+
+  grid.scrollBy({
+    left: dir * scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+function addToCart() {
+  const product = {
+    id: "wool-vest-001",
+    name: "Tailored Wool Vest",
+    price: 240,
+    currency: "EUR",
+    quantity: 1,
+    image: "images/product1.jpg"
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("Added to cart");
+}
+
+</script>
+
+</body>
+</html>

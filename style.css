@@ -1,0 +1,1072 @@
+/* ================= ROOT ================= */
+
+:root {
+  --black: #0b0b0b;
+  --black-soft: #141414;
+
+  --white: #ffffff;
+  --white-soft: #f7f5f3;
+  --white-line: rgba(0,0,0,0.08);
+
+  --text-dark-main: rgba(0,0,0,0.88);
+  --text-dark-muted: rgba(0,0,0,0.55);
+
+  --text-main: rgba(255,255,255,0.96);
+  --text-muted: rgba(255,255,255,0.62);
+  --text-soft: rgba(255,255,255,0.38);
+
+  --wine-main: #3a0f16;
+  --wine-dark: #250a0f;
+  --wine-line: rgba(120, 25, 40, 0.75);
+}
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--black);
+  color: var(--text-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 120px;
+  z-index: 100;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.35),
+    transparent
+  );
+  transition: height .6s ease, background .6s ease, backdrop-filter .6s ease;
+}
+
+.header.scrolled {
+  height: 82px;
+  background: rgba(247,245,243,0.96);
+  backdrop-filter: blur(18px);
+}
+
+/* ================= HEADER GRID ================= */
+
+.header-grid {
+  height: 100%;
+  padding: 0 90px;
+  display: grid;
+  grid-template-columns: 280px 1fr auto;
+  align-items: center;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header.scrolled .logo { color: var(--black); }
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  letter-spacing: 0.18em;
+}
+
+.brand::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-top: 12px;
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  opacity: 0.55;
+  transition: opacity .4s ease;
+}
+
+.header.scrolled .tagline {
+  opacity: 0;
+}
+
+/* ================= NAV ================= */
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+}
+
+.nav a {
+  font-size: 12px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  opacity: 0.65;
+  position: relative;
+  transition: opacity .4s ease, color .4s ease;
+}
+
+.header.scrolled .nav a {
+  color: var(--wine-main);
+  opacity: 0.85;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--wine-line);
+  transition: width .35s ease;
+  transform: translateX(-50%);
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.nav a.active::after {
+  width: 28px;
+}
+.nav a:hover::after {
+  width: 28px;
+}
+
+
+
+/* ================= LANGUAGE SWITCH (GLOBAL) ================= */
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--text-muted);
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: color .3s ease;
+}
+
+.lang-switch button.active,
+.lang-switch button:hover {
+  color: var(--wine-main);
+}
+
+.lang-switch .divider {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+  min-height: 120vh;
+  padding-top: 160px;
+  padding-bottom: 140px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,0.96),
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.15)
+    ),
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.85),
+      transparent 55%
+    );
+}
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding-left: 140px;
+  padding-bottom: 60px;
+}
+
+.hero-intro {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  color: var(--text-soft);
+  margin-bottom: 32px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(64px, 7vw, 92px);
+  line-height: 1.02;
+  margin-bottom: 36px;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  line-height: 2;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 72px;
+}
+
+/* ================= CTA (EDITORIAL) ================= */
+
+.cta-editorial {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.cta-editorial::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42px;
+  height: 1px;
+  background: var(--wine-line);
+  transition: width .5s ease;
+}
+
+.cta-editorial:hover::after {
+  width: 96px;
+}
+
+/* ================= SIGNATURE ================= */
+
+.signature {
+  padding: 140px 90px;
+  background: var(--black);
+}
+
+.signature-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 920px;
+  margin: auto;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: var(--text-muted);
+}
+
+/* ================= MANIFEST ================= */
+
+.manifest {
+  background: var(--white-soft);
+  padding: 200px 90px;
+  display: flex;
+  align-items: center;
+  gap: 160px;
+}
+
+.manifest-rose {
+  width: 260px;
+}
+
+.manifest-rose img {
+  width: 100%;
+  display: block;
+}
+
+.manifest-inner {
+  max-width: 520px;
+}
+
+.manifest-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 24px;
+  color: var(--text-dark-main);
+}
+
+.manifest-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-top: 18px;
+}
+
+.manifest-text {
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--text-dark-muted);
+  line-height: 2;
+  margin-bottom: 28px;
+}
+
+/* ================= WARDROBE PREVIEW ================= */
+
+.wardrobe-preview {
+  background: var(--black);
+  padding: 160px 90px;
+}
+
+.wardrobe-inner {
+  max-width: 540px;
+}
+
+.wardrobe-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+
+.wardrobe-text {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  line-height: 2;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.wardrobe-link {
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  position: relative;
+}
+
+.wardrobe-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 36px;
+  height: 1px;
+  background: var(--wine-line);
+  transition: width .5s ease;
+}
+
+.wardrobe-link:hover::after {
+  width: 88px;
+}
+
+/* ================= FOOTER (GLOBAL CANON) ================= */
+
+.footer {
+  padding: 120px 90px 100px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+}
+
+/* бренд */
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 0.24em;
+}
+
+/* текст */
+.footer-note {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  line-height: 2.4;
+}
+
+/* copyright */
+.footer-copy {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+}
+/* ================= FOOTER COLOR VARIANTS ================= */
+
+/* 🤍 Light footer (Index, Philosophy, Contact, About) */
+.footer--light {
+  background: var(--white-soft);
+  border-top: 1px solid var(--white-line);
+}
+
+.footer--light .footer-brand {
+  color: rgba(0,0,0,0.88);
+}
+
+.footer--light .footer-note {
+  color: rgba(0,0,0,0.35);
+}
+
+.footer--light .footer-copy {
+  color: rgba(0,0,0,0.28);
+}
+
+/* 🖤 Dark footer (Wardrobe, Product pages) */
+.footer--dark {
+  background: #0b0b0b;
+}
+
+.footer--dark .footer-brand {
+  color: rgba(255,255,255,0.92);
+}
+
+.footer--dark .footer-note {
+  color: rgba(255,255,255,0.38);
+}
+
+.footer--dark .footer-copy {
+  color: rgba(255,255,255,0.26);
+}
+
+/* ================= ANIMATION ================= */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.6s ease, transform 1.6s ease;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   CART — LA MIA ROSA
+   Valentino structure × Quiet femininity
+========================================================= */
+
+.cart-body {
+  background: var(--white-soft);
+  color: var(--text-dark-main);
+}
+
+/* PAGE */
+
+.cart-page {
+  max-width: 1180px;
+  margin: 160px auto 200px;
+  padding: 0 40px;
+}
+
+/* TITLE */
+
+.cart-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  margin-bottom: 100px;
+}
+
+/* GRID */
+
+.cart-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 120px;
+  align-items: start;
+}
+
+/* ================= ITEMS ================= */
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 36px;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--white-line);
+}
+
+.cart-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* INFO */
+
+.cart-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.cart-info p {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: rgba(0,0,0,0.55);
+  margin-bottom: 6px;
+}
+
+.cart-info .qty {
+  margin-top: 14px;
+}
+
+/* REMOVE */
+
+.remove {
+  margin-top: 18px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity .3s ease;
+}
+
+.remove:hover {
+  opacity: 0.9;
+}
+
+/* ================= SUMMARY ================= */
+
+.cart-summary {
+  position: sticky;
+  top: 140px;
+}
+
+.summary-box {
+  border: 1px solid var(--white-line);
+  padding: 48px;
+}
+
+.summary-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+
+/* ITEMS */
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: rgba(0,0,0,0.55);
+  margin-bottom: 40px;
+}
+
+/* TOTAL */
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  padding-top: 28px;
+  border-top: 1px solid var(--white-line);
+  margin-bottom: 40px;
+}
+
+.summary-total strong {
+  font-weight: 500;
+}
+
+/* CTA */
+
+.summary-cta {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--wine-line);
+  padding: 18px 0;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .35s ease;
+}
+
+.summary-cta:hover {
+  background: var(--wine-main);
+  color: #fff;
+  border-color: var(--wine-main);
+}
+
+/* ================= CHECKOUT ================= */
+
+.checkout {
+  margin-top: 160px;
+  max-width: 560px;
+}
+
+.checkout-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 48px;
+}
+
+.checkout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.checkout-grid input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--white-line);
+  padding: 14px 0;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+.checkout-grid input:focus {
+  outline: none;
+  border-color: var(--wine-main);
+}
+
+/* ================= EMPTY ================= */
+
+.cart-empty {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  margin-top: 140px;
+}
+
+.cart-empty a {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 960px) {
+  .cart-grid {
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+
+  .cart-summary {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .cart-title {
+    font-size: 40px;
+    margin-bottom: 72px;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-box {
+    padding: 36px;
+  }
+}
+/* =========================================================
+   SUCCESS POPUP — LA MIA ROSA
+   Silent · Elegant · Editorial
+========================================================= */
+
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.42);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn .6s ease;
+}
+
+.success-box {
+  background: #fff;
+  padding: 72px 64px;
+  max-width: 440px;
+  text-align: center;
+  animation: liftUp .7s ease;
+}
+
+/* TEXT */
+
+.success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 28px;
+}
+
+.success-text {
+  font-size: 15px;
+  line-height: 1.9;
+  letter-spacing: 0.14em;
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 48px;
+}
+
+/* CTA */
+
+.success-cta {
+  background: transparent;
+  border: 1px solid var(--wine-line);
+  padding: 14px 40px;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .35s ease;
+}
+
+.success-cta:hover {
+  background: var(--wine-main);
+  color: #fff;
+  border-color: var(--wine-main);
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes liftUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================= SUCCESS POPUP (LUXURY) ================= */
+
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: #fff;
+  padding: 80px 90px;
+  max-width: 520px;
+  text-align: center;
+}
+
+.success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin-bottom: 28px;
+}
+
+.success-text {
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  line-height: 2.1;
+  color: rgba(0,0,0,0.65);
+  margin-bottom: 56px;
+}
+
+.success-cta {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-bottom: 8px;
+  position: relative;
+  color: #000;
+}
+
+.success-cta::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 42px;
+  height: 1px;
+  background: rgba(122,31,42,0.6);
+  transform: translateX(-50%);
+  transition: width .4s ease;
+}
+
+.success-cta:hover::after {
+  width: 96px;
+}
+
+/* ================= ANNOUNCEMENT BAR ================= */
+
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: #000;
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  z-index: 200;
+}
+
+.announcement-text {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.announcement-text.active {
+  opacity: 1;
+}
+
+/* Зсуваємо header вниз */
+.header {
+  top: 36px;
+}
+/* ================= RELATED — STATIC GRID ================= */
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 120px;
+  overflow: visible;
+}
+
+.related-nav {
+  display: none; /* ховаємо стрілки */
+}
+
+.related-view-all {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.related-view-all a {
+  font-size: 12px;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark-main);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--wine-line);
+  transition: opacity .4s ease;
+}
+
+.related-view-all a:hover {
+  opacity: 0.6;
+}
+/* ================= RELATED — LIMIT TO 3 ================= */
+
+/* показуємо тільки перші 3 товари */
+.related-grid .related-item:nth-child(n+4) {
+  display: none;
+}
+/* ================= RELATED — REMOVE ARROWS ================= */
+
+.related-nav {
+  display: none !important;
+}
+/* =========================================================
+   MOBILE ADAPTATION — LA MIA ROSA
+   Elegant · Clean · Recruiter-safe
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ===== GLOBAL PADDING ===== */
+  .header-grid,
+  .signature,
+  .manifest,
+  .wardrobe-preview,
+  .footer,
+  .cart-page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    height: 96px;
+  }
+
+  .header-grid {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav {
+    display: none; /* без бургеру — краще сховати */
+  }
+
+  .logo .brand {
+    font-size: 20px;
+    letter-spacing: 0.14em;
+  }
+
+  .tagline {
+    font-size: 10px;
+    letter-spacing: 0.32em;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    padding-top: 140px;
+    padding-bottom: 100px;
+  }
+
+  .hero-content {
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 9vw, 56px);
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 48px;
+  }
+
+  /* ===== SIGNATURE ===== */
+  .signature-inner {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+
+  /* ===== MANIFEST ===== */
+  .manifest {
+    flex-direction: column;
+    gap: 64px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  .manifest-rose {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .manifest-title {
+    font-size: 32px;
+  }
+
+  /* ===== WARDROBE ===== */
+  .wardrobe-title {
+    font-size: 32px;
+  }
+
+  .wardrobe-text {
+    font-size: 13px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .footer-brand {
+    font-size: 18px;
+  }
+
+  .footer-note {
+    font-size: 10px;
+  }
+
+  /* ===== RELATED ===== */
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 420px) {
+
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .manifest-title,
+  .wardrobe-title {
+    font-size: 28px;
+  }
+}

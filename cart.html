@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="cart_title">Your Cart — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="cart-body">
+
+<!-- ================= HEADER (GLOBAL) ================= -->
+<header class="header">
+  <div class="header-grid">
+
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline" data-i18n="tagline">Modern Luxury Womenswear</span>
+    </a>
+
+    <nav class="nav">
+      <a href="collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="about.html" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="contact.html" data-i18n="nav_reach">Reach Us</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <span class="divider">|</span>
+      <button class="lang" data-lang="tr">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ================= CART PAGE ================= -->
+<main class="cart-page">
+
+  <h1 class="cart-title" data-i18n="cart">Your Cart</h1>
+
+  <div class="cart-grid">
+
+    <!-- LEFT -->
+    <section class="cart-items" id="cart-items">
+      <!-- cart.js -->
+    </section>
+
+    <!-- RIGHT -->
+    <aside class="cart-summary">
+      <div class="summary-box">
+
+        <h2 class="summary-title" data-i18n="order_summary">
+          Order Summary
+        </h2>
+
+        <div class="summary-items" id="summaryItems">
+          <!-- cart.js -->
+        </div>
+
+        <div class="summary-total">
+          <span data-i18n="total">Total</span>
+          <strong id="cart-total">€0</strong>
+        </div>
+
+        <button class="summary-cta" onclick="openCheckout()" data-i18n="place_order">
+          Place order
+        </button>
+
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ================= CHECKOUT ================= -->
+  <section class="checkout" id="checkout-form" style="display:none;">
+
+    <h2 class="checkout-title" data-i18n="checkout_details">
+      Checkout details
+    </h2>
+
+    <div class="checkout-grid">
+      <input id="name" data-i18n-placeholder="full_name" placeholder="Full name">
+      <input id="email" data-i18n-placeholder="email" placeholder="Email">
+      <input id="phone" data-i18n-placeholder="phone" placeholder="Phone">
+      <input id="address" data-i18n-placeholder="address" placeholder="Address">
+      <input id="city" data-i18n-placeholder="city" placeholder="City">
+    </div>
+
+    <button class="summary-cta" onclick="placeOrder()" data-i18n="submit_order">
+      Submit order
+    </button>
+
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer footer--light">
+  <div class="footer-inner">
+
+    <div class="footer-brand">LA MIA ROSA</div>
+
+    <div class="footer-note" data-i18n="footer_note">
+      Designed in silence · Made to endure · Worn with intention
+    </div>
+
+    <div class="footer-copy" data-i18n="footer_copy">
+      2026 © La Mia Rosa. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================= SUCCESS POPUP ================= -->
+<div class="success-overlay" id="successPopup">
+  <div class="success-box">
+
+    <h2 class="success-title" data-i18n="success_title"></h2>
+
+    <p class="success-text" data-i18n="success_text"></p>
+
+    <button
+      class="success-cta"
+      onclick="closeSuccess()"
+      data-i18n="success_continue">
+    </button>
+
+  </div>
+</div>
+
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/i18n.js"></script>
+<script src="js/cart.js"></script>
+
+
+<script>
+/* HEADER SCROLL — same as other pages */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 120);
+});
+</script>
+
+</body>
+</html>
+

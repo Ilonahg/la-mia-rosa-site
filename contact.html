@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reach Me — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+<!-- ================= ANNOUNCEMENT BAR ================= -->
+<div class="announcement-bar">
+  <span class="announcement-text active">Return & Exchange Guarantee</span>
+  <span class="announcement-text">Free shipping on orders of ₺2500 and above</span>
+  <span class="announcement-text">Launch Special: Up to 40% Discount</span>
+</div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+  <div class="header-grid">
+
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline" data-i18n="tagline">Modern Luxury Womenswear</span>
+    </a>
+
+    <nav class="nav">
+      <a href="collections.html" class="nav-link" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="about.html" class="nav-link" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="contact.html" class="nav-link active" data-i18n="nav_reach">Reach me</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <span class="divider">|</span>
+      <button class="lang" data-lang="tr">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="contact">
+
+<!-- ================= HERO ================= -->
+
+<section class="contact-hero fade">
+  <div class="contact-hero-inner">
+
+    <span class="contact-eyebrow">Contact</span>
+
+    <h1 class="contact-title" data-i18n="title">
+      Reach Me
+    </h1>
+
+    <p class="contact-subtitle" data-i18n="subtitle">
+      Communication, like luxury,<br>
+      should feel intentional.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= INTRO ================= -->
+
+<section class="contact-text fade">
+
+  <p class="contact-paragraph" data-i18n="text_1">
+    La Mia Rosa welcomes thoughtful conversations —
+    from private clients, boutiques, and collaborators
+    who share a sensitivity for quiet elegance.
+  </p>
+
+  <p class="contact-paragraph muted" data-i18n="text_2">
+    Each message is received with care.
+    Please allow time for a considered response.
+  </p>
+
+</section>
+
+<!-- ================= DETAILS ================= -->
+
+<section class="contact-details fade">
+
+  <div class="contact-item">
+    <span class="contact-label" data-i18n="label_email">Email</span>
+    <a href="mailto:studio@lamiarosa.com" class="contact-link email">
+      studio@lamiarosa.com
+    </a>
+  </div>
+
+  <div class="contact-item">
+    <span class="contact-label" data-i18n="label_instagram">Instagram</span>
+    <a href="https://instagram.com/lamiarosa" target="_blank" class="contact-link instagram">
+      @lamiarosa
+    </a>
+  </div>
+
+  <div class="contact-item">
+    <span class="contact-label" data-i18n="label_private">Private Appointments</span>
+    <span class="contact-note" data-i18n="private_note">
+      Available upon request
+    </span>
+  </div>
+
+</section>
+
+<!-- ================= STATEMENT ================= -->
+
+<section class="contact-closing fade">
+  <blockquote data-i18n="quote">
+    Presence begins with listening.
+  </blockquote>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer footer--light footer--compact">
+>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      LA MIA ROSA
+    </div>
+
+    <div class="footer-note">
+      Designed in silence · Made to endure · Worn with intention
+    </div>
+
+    <div class="footer-copy">
+      2026 © La Mia Rosa. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script>
+/* Header scroll */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+/* Fade reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade')
+  .forEach(el => observer.observe(el));
+
+/* Language */
+const translations = {
+  en: {
+    tagline: "Modern Luxury Womenswear",
+    nav_wardrobe: "Wardrobe",
+    nav_philosophy: "Philosophy",
+    nav_reach: "Reach me",
+    title: "Reach Me",
+    subtitle: "Communication, like luxury,<br>should feel intentional.",
+    text_1: "La Mia Rosa welcomes thoughtful conversations — from private clients, boutiques, and collaborators who share a sensitivity for quiet elegance.",
+    text_2: "Each message is received with care. Please allow time for a considered response.",
+    label_email: "Email",
+    label_instagram: "Instagram",
+    label_private: "Private Appointments",
+    private_note: "Available upon request",
+    quote: "Presence begins with listening."
+  },
+  tr: {
+    tagline: "Modern Lüks Kadın Giyimi",
+    nav_wardrobe: "Gardırop",
+    nav_philosophy: "Felsefe",
+    nav_reach: "İletişim",
+    title: "İletişim",
+    subtitle: "İletişim, lüks gibi,<br>bilinçli hissettirmelidir.",
+    text_1: "La Mia Rosa; sessiz zarafeti paylaşan özel müşteriler, butik ortaklar ve iş birliklerine açık bir iletişimi memnuniyetle karşılar.",
+    text_2: "Her mesaj özenle değerlendirilir. Yanıt için lütfen zaman tanıyınız.",
+    label_email: "E-posta",
+    label_instagram: "Instagram",
+    label_private: "Özel Randevular",
+    private_note: "Talep üzerine",
+    quote: "Varlık, dinlemekle başlar."
+  }
+};
+
+const langButtons = document.querySelectorAll('.lang');
+const elements = document.querySelectorAll('[data-i18n]');
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    langButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const lang = btn.dataset.lang;
+    elements.forEach(el => {
+      el.innerHTML = translations[lang][el.dataset.i18n];
+    });
+  });
+});
+</script>
+<script src="js/announcement.js"></script>
+
+</body>
+</html>

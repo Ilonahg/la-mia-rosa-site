@@ -1,0 +1,613 @@
+ /* =========================================================
+   PRODUCT PAGE — LA MIA ROSA
+   FULL LUXURY STYLESHEET
+========================================================= */
+
+/* ================= ROOT ================= */
+
+:root {
+  --white-soft: #f7f5f3;
+  --white-line: rgba(0,0,0,0.08);
+  --text-dark-main: #1c1c1c;
+  --wine-main: #7a1f2a;
+  --wine-line: rgba(122,31,42,0.4);
+}
+
+/* ================= BODY ================= */
+
+.product-body {
+  margin: 0;
+  background: var(--white-soft);
+  color: var(--text-dark-main);
+  font-family: 'Inter', sans-serif;
+}
+
+.product-page {
+  padding-top: 160px;
+}
+
+/* ================= HEADER ================= */
+
+.header-product {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.25),
+    transparent
+  );
+  backdrop-filter: blur(10px);
+  transition: background .6s ease, box-shadow .6s ease;
+}
+
+.header-product.scrolled {
+  background: rgba(247,245,243,0.97);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* ================= HERO ================= */
+
+.product-hero {
+  padding: 140px 90px 200px;
+}
+
+.product-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 160px;
+  align-items: center;
+}
+
+/* ================= INFO ================= */
+
+.product-info {
+  max-width: 480px;
+}
+
+.product-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(46px, 4.8vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 36px;
+}
+
+.product-tagline {
+  font-size: 14px;
+  letter-spacing: 0.26em;
+  line-height: 2.2;
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 64px;
+}
+
+.product-price {
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+
+.product-rating {
+  font-size: 13px;
+  letter-spacing: 0.34em;
+  color: var(--wine-main);
+  margin-bottom: 72px;
+}
+
+/* ================= CTA ================= */
+
+.product-cta {
+  font-size: 12px;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark-main);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--wine-line);
+  transition: opacity .4s ease;
+}
+
+.product-cta:hover {
+  opacity: 0.55;
+}
+
+/* ================= IMAGE ================= */
+
+.product-image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .9s ease, filter .9s ease;
+}
+
+.product-image a:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.02);
+}
+
+/* ================= GALLERY ================= */
+
+.product-gallery {
+  padding: 0 90px 260px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 220px;                     /* ВЕЛИКЕ ПОВІТРЯ */
+}
+
+.gallery-item {
+  width: 100%;
+  display: flex;
+}
+
+/* перше фото — праворуч */
+.gallery-item:first-child {
+  justify-content: flex-end;
+}
+
+/* друге фото — ліворуч */
+.gallery-item:last-child {
+  justify-content: flex-start;
+}
+
+.gallery-item img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s ease, filter 1.2s ease;
+  filter: brightness(0.97);
+}
+
+/* LUXURY HOVER */
+.gallery-item img:hover {
+  transform: scale(1.035);
+  filter: brightness(1);
+}
+.product-image img,
+.gallery-item img {
+  transition: opacity .4s ease, transform 1.2s ease;
+}
+
+
+
+/* ================= STORY ================= */
+
+.product-story {
+  padding: 220px 90px;
+}
+
+.story-inner {
+  max-width: 560px;
+}
+
+.story-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 28px;
+}
+
+.story-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-top: 18px;
+}
+
+.story-text {
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  line-height: 2.15;
+  color: rgba(0,0,0,0.6);
+}
+
+/* ================= DETAILS ================= */
+
+.product-details {
+  padding: 180px 90px;
+  border-top: 1px solid var(--white-line);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 140px;
+  max-width: 780px;
+}
+
+.details-col p {
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  line-height: 2.2;
+  color: rgba(0,0,0,0.58);
+  margin-bottom: 30px;
+}
+
+.details-col strong {
+  font-weight: 500;
+  color: var(--text-dark-main);
+}
+
+/* ================= RELATED ================= */
+
+.product-related {
+  padding: 220px 90px 200px;
+}
+
+/* header */
+.related-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.related-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+/* arrows — RAISED */
+.related-arrows {
+  display: flex;
+  gap: 48px;
+}
+
+.related-arrows button {
+  background: none;
+  border: none;
+  font-size: 34px;              /* ⬅️ ВАЖЛИВО: великий розмір */
+  font-weight: 300;
+  cursor: pointer;
+  color: rgba(0,0,0,0.35);
+  transition:
+    color .3s ease,
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+.related-arrows button:hover {
+  color: var(--wine-main);
+  transform: translateX(4px);
+}
+
+
+/* grid */
+.related-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 240px) / 3);
+  gap: 120px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 30px;
+  scroll-snap-type: x mandatory;
+}
+
+.related-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* item */
+.related-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-snap-align: start;
+}
+
+.related-item img {
+  width: 100%;
+  height: 360px;        /* однакова висота для всіх */
+  object-fit: cover;   /* фото обрізається, але не тягнеться */
+  display: block;
+  transition: transform .9s ease;
+}
+
+
+.related-item a:hover img {
+  transform: scale(1.05);
+}
+
+.related-name {
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark-main);
+}
+
+.related-name:hover {
+  color: var(--wine-main);
+}
+
+.related-item .rating {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: var(--wine-main);
+}
+
+.related-item .price {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+}
+
+.related-item .micro {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  line-height: 1.9;
+  color: rgba(0,0,0,0.55);
+}
+
+/* ================= FOOTER ================= */
+
+.footer-center {
+  padding: 140px 28px 120px;
+  background: #000;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 760px;
+  margin: auto;
+}
+
+.footer-inner p {
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  line-height: 2.2;
+}
+
+.footer-note {
+  margin-top: 18px;
+  opacity: 0.6;
+}
+
+/* ================= FADE ================= */
+
+.fade {
+  opacity: 0;
+  transform: translateY(44px);
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1.3s ease;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .product-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+
+  .related-grid {
+    grid-auto-columns: 80%;
+  }
+
+  .related-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-hero,
+  .product-gallery,
+  .product-story,
+  .product-details,
+  .product-related {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .product-hero {
+    padding-top: 100px;
+  }
+}
+/* =========================================================
+   RELATED PRODUCTS — FINAL CLEAN VERSION
+========================================================= */
+
+.product-related {
+  padding: 220px 90px 200px;
+}
+
+/* title */
+.related-header {
+  margin-bottom: 80px;
+}
+
+.related-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+}
+
+/* grid */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 120px;
+}
+
+/* hide extra items */
+.related-grid .related-item:nth-child(n+4) {
+  display: none;
+}
+
+/* item */
+.related-item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.related-item img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  transition: transform .9s ease;
+}
+
+.related-item a:hover img {
+  transform: scale(1.05);
+}
+
+/* text */
+.related-name {
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark-main);
+}
+
+.related-name:hover {
+  color: var(--wine-main);
+}
+
+.related-item .rating {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: var(--wine-main);
+}
+
+.related-item .price {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+}
+
+.related-item .micro {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  line-height: 1.9;
+  color: rgba(0,0,0,0.55);
+}
+
+/* view all */
+.related-view-all {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.related-view-all a {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+
+  color: var(--text-dark-main);
+  text-decoration: none;
+
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--wine-line);
+
+  transition: opacity .4s ease, border-color .4s ease;
+}
+
+.related-view-all a:hover {
+  opacity: 0.6;
+  border-bottom-color: var(--wine-main);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
+/* =========================================================
+   PRODUCT PAGE — REAL FINAL MOBILE FIX
+   (kills grid conflicts)
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ===== RESET RELATED GRID COMPLETELY ===== */
+  .related-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 56px !important;
+
+    grid-template-columns: none !important;
+    grid-auto-flow: unset !important;
+    grid-auto-columns: unset !important;
+
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  .related-item {
+    width: 100% !important;
+  }
+
+  .related-item img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  /* ===== PRODUCT HERO ===== */
+  .product-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px;
+  }
+
+  .product-info {
+    order: -1;
+  }
+
+  .product-title {
+    font-size: 34px;
+  }
+
+  .product-tagline {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  /* ===== GALLERY ===== */
+  .product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .gallery-item {
+    justify-content: center !important;
+  }
+
+  .gallery-item img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 420px) {
+  .related-item img,
+  .gallery-item img {
+    aspect-ratio: 2 / 3;
+  }
+}

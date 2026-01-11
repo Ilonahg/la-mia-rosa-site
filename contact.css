@@ -1,0 +1,377 @@
+/* =========================================================
+   REACH ME — LA MIA ROSA
+   Couture / Editorial Contact Page
+   ========================================================= */
+
+/* ================= ROOT ENHANCEMENTS ================= */
+
+.contact {
+  position: relative;
+  padding-top: 180px;
+  padding-left: 96px;
+  padding-right: 96px;
+  padding-bottom: 240px;
+
+  background:
+    radial-gradient(
+      ellipse at top right,
+      rgba(120, 25, 40, 0.08),
+      transparent 60%
+    ),
+    linear-gradient(
+      to bottom,
+      #0a0a0a 0%,
+      #120b0d 48%,
+      #0a0a0a 100%
+    );
+
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* subtle grain */
+.contact::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+/* ================= HERO ================= */
+
+.contact-hero {
+  position: relative;
+  max-width: 920px;
+  padding: 200px 0 240px;
+  margin-bottom: 220px;
+}
+
+.contact-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.46em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 40px;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(60px, 7vw, 92px);
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  margin-bottom: 64px;
+}
+
+.contact-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  line-height: 2.4;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.contact-hero::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-top: 120px;
+}
+
+/* ================= TEXT ================= */
+
+.contact-text {
+  position: relative;
+  max-width: 600px;
+  margin-bottom: 240px;
+}
+
+.contact-text::before {
+  content: "";
+  position: absolute;
+  left: -96px;
+  top: 0;
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    var(--wine-line),
+    transparent
+  );
+}
+
+.contact-paragraph {
+  font-size: 15px;
+  line-height: 2.1;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 56px;
+}
+
+.contact-paragraph.muted {
+  color: var(--text-soft);
+}
+
+/* ================= DETAILS ================= */
+
+.contact-details {
+  max-width: 520px;
+  margin-bottom: 260px;
+}
+
+.contact-item {
+  margin-bottom: 88px;
+}
+
+.contact-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 22px;
+}
+
+.contact-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  transition: opacity 0.4s ease;
+}
+
+.contact-link:hover {
+  opacity: 0.85;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  width: 0;
+  height: 1px;
+  background: var(--wine-line);
+  transition: width 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.contact-link:hover::after {
+  width: 100%;
+}
+
+.contact-note {
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+
+/* ================= STATEMENT ================= */
+
+.contact-closing {
+  margin-bottom: 240px;
+}
+
+.contact-closing blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 4.8vw, 56px);
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+  max-width: 560px;
+}
+
+.contact-closing blockquote::before {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-bottom: 64px;
+}
+
+/* ================= FADE ================= */
+
+.fade {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 1.8s ease, transform 1.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: var(--white-soft);
+  padding: 96px 90px 88px;
+  border-top: 1px solid var(--white-line);
+}
+
+
+
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 0.28em;
+  margin-bottom: 24px;
+  color: var(--black);
+}
+
+.footer-note {
+  font-size: 11px;
+  letter-spacing: 0.34em;
+  line-height: 2.2;
+  color: var(--text-dark-muted);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .contact {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+
+  .contact-text::before {
+    left: -72px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .contact-text::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding-top: 120px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 120px;
+  }
+
+  .contact-hero {
+    padding: 120px 0 160px;
+    margin-bottom: 140px;
+  }
+
+  .contact-title {
+    font-size: 44px;
+    line-height: 1.08;
+  }
+
+  .contact-subtitle {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+  }
+
+  .contact-text {
+    margin-bottom: 160px;
+  }
+
+  .contact-paragraph {
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.12em;
+  }
+
+  .contact-details {
+    margin-bottom: 180px;
+  }
+
+  .contact-item {
+    margin-bottom: 64px;
+  }
+
+  .contact-link {
+    font-size: 20px;
+  }
+
+  .contact-closing {
+    margin-bottom: 120px;
+  }
+
+  .contact-closing blockquote {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .footer {
+    padding: 120px 90px 100px;
+  }
+
+  .footer-brand {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+  }
+}
+/* ================= IMAGE FADE SWAP ================= */
+
+.product-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-link img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.9s ease, transform 1.6s cubic-bezier(.22,.61,.36,1);
+}
+
+/* secondary image */
+.img-secondary {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hover effect */
+.look:hover .img-primary {
+  opacity: 0;
+}
+
+.look:hover .img-secondary {
+  opacity: 1;
+}
+
+/* subtle luxury zoom stays */
+.look:hover img {
+  transform: scale(1.035);
+}
+ 

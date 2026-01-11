@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philosophy — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon3.png">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PAGE STYLES -->
+  <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+<!-- ================= ANNOUNCEMENT BAR ================= -->
+<div class="announcement-bar">
+  <span class="announcement-text active">Return & Exchange Guarantee</span>
+  <span class="announcement-text">Free shipping on orders of ₺2500 and above</span>
+  <span class="announcement-text">Launch Special: Up to 40% Discount</span>
+</div>
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
+
+<header class="header">
+  <div class="header-grid">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline" data-i18n="tagline">Modern Luxury Womenswear</span>
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <a href="collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="about.html" class="active" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="contact.html" data-i18n="nav_reach">Reach me</a>
+    </nav>
+
+    <!-- LANGUAGE SWITCH -->
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <span class="divider">|</span>
+      <button class="lang" data-lang="tr">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ======================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="philosophy">
+
+  <!-- ================= HERO ================= -->
+
+  <section class="philosophy-hero fade">
+    <div class="philosophy-hero-inner">
+
+      <h1 class="philosophy-title" data-i18n="hero_title">
+        Quiet Luxury<br>
+        for Women Who Choose Themselves
+      </h1>
+
+      <p class="philosophy-subtitle" data-i18n="hero_subtitle">
+        Elegance shaped by intention.<br>
+        Strength expressed in restraint.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ================= MANIFEST ================= -->
+
+  <section class="philosophy-manifest fade">
+
+    <p class="manifest-paragraph" data-i18n="m1">
+      La Mia Rosa is created for women who do not follow trends —
+      but define their own sense of elegance.
+    </p>
+
+    <p class="manifest-paragraph" data-i18n="m2">
+      Each piece begins with a quiet decision:
+      to remove excess, to honor form,
+      to allow the wearer — not the garment — to speak.
+    </p>
+
+    <p class="manifest-paragraph" data-i18n="m3">
+      Calm silhouettes. Noble textures.
+      A deliberate balance between softness and strength —
+      never competing, always coexisting.
+    </p>
+
+  </section>
+
+  <!-- ================= STATEMENT ================= -->
+
+  <section class="philosophy-statement fade">
+    <blockquote data-i18n="quote">
+      Luxury is not volume.<br>
+      It is presence.
+    </blockquote>
+  </section>
+
+  <!-- ================= CLOSING ================= -->
+
+  <section class="philosophy-closing fade">
+
+    <p class="closing-text" data-i18n="c1">
+      We believe true luxury is felt —
+      in how a garment moves with you,
+      how it becomes part of your rhythm,
+      your posture, your silence.
+    </p>
+
+    <p class="closing-text" data-i18n="c2">
+      Designed not to impress,
+      but to endure beyond seasons.
+    </p>
+
+    <p class="signature" data-i18n="sign">
+      — La Mia Rosa
+    </p>
+
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer footer--light">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      LA MIA ROSA
+    </div>
+
+    <div class="footer-note">
+      Designed in silence · Made to endure · Worn with intention
+    </div>
+
+    <div class="footer-copy">
+      2026 © La Mia Rosa. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<!-- ======================================================
+     SCRIPTS
+====================================================== -->
+
+<script>
+/* HEADER SCROLL */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+</script>
+
+<script>
+/* FADE REVEAL */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade')
+  .forEach(el => observer.observe(el));
+</script>
+
+<script>
+/* LANGUAGE SYSTEM */
+const translations = {
+  en: {
+    tagline: "Modern Luxury Womenswear",
+    nav_wardrobe: "Wardrobe",
+    nav_philosophy: "Philosophy",
+    nav_reach: "Reach me",
+
+    hero_title: "Quiet Luxury<br>for Women Who Choose Themselves",
+    hero_subtitle: "Elegance shaped by intention.<br>Strength expressed in restraint.",
+
+    m1: "La Mia Rosa is created for women who do not follow trends — but define their own sense of elegance.",
+    m2: "Each piece begins with a quiet decision: to remove excess, to honor form, to allow the wearer — not the garment — to speak.",
+    m3: "Calm silhouettes. Noble textures. A deliberate balance between softness and strength — never competing, always coexisting.",
+
+    quote: "Luxury is not volume.<br>It is presence.",
+
+    c1: "We believe true luxury is felt — in how a garment moves with you, how it becomes part of your rhythm, your posture, your silence.",
+    c2: "Designed not to impress, but to endure beyond seasons.",
+    sign: "— La Mia Rosa",
+
+    footer_line: "Designed in silence · Made to endure · Worn with intention"
+  },
+
+  tr: {
+    tagline: "Modern Lüks Kadın Giyimi",
+    nav_wardrobe: "Gardırop",
+    nav_philosophy: "Felsefe",
+    nav_reach: "İletişim",
+
+    hero_title: "Kendini Seçen Kadınlar İçin<br>Sessiz Lüks",
+    hero_subtitle: "Niyetle şekillenen zarafet.<br>Sadelikte ifade edilen güç.",
+
+    m1: "La Mia Rosa, trendleri takip etmeyen — kendi zarafet anlayışını tanımlayan kadınlar için yaratıldı.",
+    m2: "Her parça sessiz bir kararla başlar: fazlalığı kaldırmak, formu onurlandırmak ve giysinin değil — kadının konuşmasına izin vermek.",
+    m3: "Sakin silüetler. Asil dokular. Yumuşaklık ile gücün bilinçli dengesi — asla yarışmaz, her zaman birlikte var olur.",
+
+    quote: "Lüks bir ses değildir.<br>Bir varlıktır.",
+
+    c1: "Gerçek lüksün hissedildiğine inanıyoruz — bir giysinin seninle nasıl hareket ettiğinde, ritminin, duruşunun ve sessizliğinin bir parçası olduğunda.",
+    c2: "Etkilemek için değil, mevsimlerin ötesinde var olmak için tasarlandı.",
+    sign: "— La Mia Rosa",
+
+    footer_line: "Sessizlikte tasarlandı · Uzun ömür için üretildi · Niyetle giyildi"
+  }
+};
+
+const buttons = document.querySelectorAll('.lang');
+const elements = document.querySelectorAll('[data-i18n]');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const lang = btn.dataset.lang;
+    elements.forEach(el => {
+      el.innerHTML = translations[lang][el.dataset.i18n];
+    });
+  });
+});
+</script>
+<script src="js/announcement.js"></script>
+
+</body>
+</html>

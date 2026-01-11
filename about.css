@@ -1,0 +1,299 @@
+/* =========================================================
+   PHILOSOPHY — LA MIA ROSA
+   Quiet Luxury / Editorial Canon
+   ========================================================= */
+
+/* ================= ROOT EXTENSION ================= */
+
+:root {
+  --black: #0b0b0b;
+  --black-soft: #120b0d;
+
+  --white: #ffffff;
+  --white-soft: #f7f5f3;
+  --white-line: rgba(0,0,0,0.08);
+
+  --text-main: rgba(255,255,255,0.96);
+  --text-muted: rgba(255,255,255,0.62);
+  --text-soft: rgba(255,255,255,0.4);
+
+  --text-dark-main: rgba(0,0,0,0.88);
+  --text-dark-muted: rgba(0,0,0,0.55);
+
+  --wine-main: #3a0f16;
+  --wine-line: rgba(120,25,40,0.75);
+}
+
+/* ================= PAGE WRAPPER ================= */
+
+.philosophy {
+  padding-top: 140px;
+  padding-left: 90px;
+  padding-right: 90px;
+  background:
+    linear-gradient(
+      to bottom,
+      var(--black) 0%,
+      var(--black-soft) 45%,
+      var(--black) 100%
+    );
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* ================= NAV ACTIVE (CANON) ================= */
+
+.nav a {
+  position: relative;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  width: 28px;
+  height: 1px;
+  background: var(--wine-line);
+  transform: translateX(-50%);
+  opacity: 0.9;
+}
+
+/* scrolled header */
+.header.scrolled .nav a.active::after {
+  background: var(--wine-line);
+}
+
+
+/* ================= HERO ================= */
+
+.philosophy-hero {
+  position: relative;
+  max-width: 900px;
+  padding: 140px 0 160px;
+  margin-bottom: 180px;
+}
+
+.philosophy-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.philosophy-hero::before {
+  content: "";
+  position: absolute;
+  inset: -200px -120px;
+  background:
+    radial-gradient(
+      ellipse at top left,
+      rgba(120,25,40,0.16),
+      transparent 65%
+    );
+  z-index: 0;
+  animation: heroDrift 30s ease-in-out infinite alternate;
+}
+
+.philosophy-hero::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-top: 72px;
+}
+
+/* ================= HERO TYPOGRAPHY ================= */
+
+.philosophy-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(56px, 6.6vw, 84px);
+  line-height: 1.04;
+  letter-spacing: 0.015em;
+  margin-bottom: 56px;
+}
+
+.philosophy-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  line-height: 2;
+  color: var(--text-muted);
+}
+
+/* ================= MANIFEST ================= */
+
+.philosophy-manifest {
+  position: relative;
+  max-width: 580px;
+  margin-bottom: 200px;
+}
+
+.philosophy-manifest::before {
+  content: "";
+  position: absolute;
+  left: -90px;
+  top: 0;
+  width: 1px;
+  height: 160px;
+  background: var(--wine-line);
+  opacity: 0.85;
+}
+
+.manifest-paragraph {
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+/* ================= STATEMENT ================= */
+
+.philosophy-statement {
+  margin-bottom: 200px;
+}
+
+.philosophy-statement blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 4.6vw, 52px);
+  line-height: 1.18;
+  letter-spacing: 0.04em;
+  max-width: 560px;
+  position: relative;
+}
+
+.philosophy-statement blockquote::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--wine-line);
+  margin-bottom: 56px;
+}
+
+/* ================= CLOSING ================= */
+
+.philosophy-closing {
+  max-width: 580px;
+  margin-bottom: 180px;
+}
+
+.closing-text {
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.signature {
+  margin-top: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: var(--white-soft);
+  padding: 120px 90px 100px;
+  border-top: 1px solid var(--white-line);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  letter-spacing: 0.24em;
+  color: var(--black);
+}
+
+.footer-note {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  line-height: 2;
+  color: var(--text-dark-muted);
+}
+
+/* ================= ANIMATION ================= */
+
+.fade {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 1.6s ease,
+    transform 1.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes heroDrift {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-40px,30px); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .philosophy {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .philosophy-manifest::before {
+    left: -64px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .philosophy {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .philosophy-manifest::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy {
+    padding-top: 120px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .philosophy-hero {
+    padding: 100px 0 120px;
+    margin-bottom: 120px;
+  }
+
+  .philosophy-title {
+    font-size: 42px;
+  }
+
+  .philosophy-statement blockquote {
+    font-size: 28px;
+  }
+
+  .footer {
+    padding: 80px 28px;
+  }
+
+  .footer-brand {
+    font-size: 18px;
+  }
+}

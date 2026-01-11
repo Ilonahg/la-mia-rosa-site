@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-grid">
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline">Modern Luxury Womenswear</span>
+    </a>
+  </div>
+</header>
+
+<main class="checkout-page">
+
+  <h1 class="checkout-title">Checkout</h1>
+
+  <div class="checkout-grid">
+
+    <!-- FORM -->
+    <form id="checkoutForm" class="checkout-form">
+
+      <label>
+        Full name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Phone
+        <input type="tel" name="phone" placeholder="+90" required>
+      </label>
+
+      <label>
+        Address
+        <input type="text" name="address" required>
+      </label>
+
+      <label>
+        City
+        <input type="text" name="city" required>
+      </label>
+
+      <label>
+        Country
+        <input type="text" value="Turkey" disabled>
+      </label>
+
+      <button type="submit" class="checkout-btn">
+        Place order
+      </button>
+
+    </form>
+
+    <!-- SUMMARY -->
+    <div class="checkout-summary">
+      <h3>Your order</h3>
+      <div id="summaryItems"></div>
+      <div class="summary-total">
+        <span>Total</span>
+        <strong id="summaryTotal">€0</strong>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="js/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("8vgko_TSMi6LWVUXk");
+  })();
+</script>
+<script>
+function sendOrderEmail(orderData) {
+  emailjs.send(
+    "service_760lbcp",
+    "template_hzhvkln",
+    {
+      name: orderData.name,
+      email: orderData.email,
+      phone: orderData.phone,
+      address: orderData.address,
+      city: orderData.city,
+      order: orderData.items,
+      total: orderData.total,
+      date: new Date().toLocaleString()
+    }
+  ).then(
+    function(response) {
+      alert("Order sent successfully!");
+    },
+    function(error) {
+      alert("Failed to send order. Please try again.");
+      console.error(error);
+    }
+  );
+}
+</script>
+
+</body>
+</html>

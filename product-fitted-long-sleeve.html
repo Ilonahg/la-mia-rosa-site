@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Second Skin Top — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+
+  <style>
+    .color-selector {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .color-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.25);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .color-dot.active {
+      transform: scale(1.25);
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
+    }
+    .color-dark { background:#3a2320; }
+    .color-light { background:#f1efe9; }
+  </style>
+</head>
+
+<body class="product-body">
+
+<!-- ================= HEADER ================= -->
+<header class="header header-product">
+  <div class="header-grid">
+
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline" data-i18n="tagline">Modern Luxury Womenswear</span>
+    </a>
+
+    <nav class="nav">
+      <a href="collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="about.html" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="contact.html" data-i18n="nav_reach">Reach Us</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang" data-lang="tr">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="product-page">
+
+<!-- ================= HERO (IMAGE RIGHT) ================= -->
+<section class="product-hero fade">
+  <div class="product-hero-grid">
+
+    <div class="product-info">
+      <h1 class="product-title" data-i18n="p_title">Second Skin Top</h1>
+
+      <p class="product-tagline" data-i18n="p_tagline">
+        Second-skin feel · Minimal seams
+      </p>
+
+      <div class="product-price">€140</div>
+      <div class="product-rating">★★★★★</div>
+
+      <!-- COLORS -->
+      <div class="color-selector">
+        <div class="color-dot color-dark active" data-color="dark"></div>
+        <div class="color-dot color-light" data-color="light"></div>
+      </div>
+
+      <a href="#" class="product-cta" data-i18n="cta">Add to cart</a>
+    </div>
+
+    <div class="product-image">
+      <img id="heroImage" src="images/product6.jpg" alt="Second Skin Top">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= GALLERY (IMAGE LEFT) ================= -->
+<section class="product-gallery fade">
+  <div class="gallery-item" style="justify-content:flex-start;">
+    <img id="galleryImage" src="images/product6.jpg" alt="Second Skin Top detail">
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section class="product-story fade">
+  <div class="story-inner">
+    <h2 class="story-title" data-i18n="idea">The Idea</h2>
+    <p class="story-text" data-i18n="story">
+      Designed to disappear on the body.<br>
+      To move with you, not over you.<br><br>
+      It becomes a layer of comfort —<br>
+      not a statement.
+    </p>
+  </div>
+</section>
+
+<!-- ================= DETAILS ================= -->
+<section class="product-details fade">
+  <div class="details-grid">
+
+    <div class="details-col">
+      <p><strong data-i18n="fabric">Fabric</strong><br>Soft stretch jersey</p>
+      <p><strong data-i18n="origin">Origin</strong><br>Made in Europe</p>
+      <p><strong data-i18n="touch">Touch</strong><br>Silky, smooth</p>
+      <p><strong data-i18n="season">Season</strong><br>All year</p>
+    </div>
+
+    <div class="details-col">
+      <p><strong data-i18n="fit">Fit</strong><br>Second skin</p>
+      <p><strong data-i18n="length">Length</strong><br>Hip</p>
+      <p><strong data-i18n="construction">Construction</strong><br>Minimal seams</p>
+      <p><strong data-i18n="care">Care</strong><br>Hand wash cold</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RELATED ================= -->
+<section class="product-related fade">
+
+  <!-- TITLE -->
+  <div class="related-header">
+    <h3 class="related-title" data-i18n="also">You may also like</h3>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <div class="related-grid">
+
+    <!-- 1 -->
+    <article class="related-item">
+      <a href="product-zip-cardigan.html">
+        <img src="images/product7.jpg" alt="Urban Knit Dress">
+      </a>
+      <a href="product-zip-cardigan.html" class="related-name">
+        Urban Knit Dress
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€290</span>
+    </article>
+
+    <!-- 2 -->
+    <article class="related-item">
+      <a href="product-wool-vest.html">
+        <img src="images/product1.jpg" alt="Tailored Wool Vest">
+      </a>
+      <a href="product-wool-vest.html" class="related-name">
+        Tailored Wool Vest
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€240</span>
+    </article>
+
+    <!-- 3 -->
+    <article class="related-item">
+      <a href="product-soft-knit-sweater.html">
+        <img src="images/product3.jpg" alt="Soft Knitwear">
+      </a>
+      <a href="product-soft-knit-sweater.html" class="related-name">
+        Soft Knitwear
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€190</span>
+    </article>
+
+  </div>
+
+</section>
+
+
+  <!-- VIEW ALL -->
+  <div class="related-view-all">
+    <a href="collections.html">View all</a>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer footer--dark">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      LA MIA ROSA
+    </div>
+
+    <div class="footer-note">
+      Designed in silence · Made to endure · Worn with intention
+    </div>
+
+    <div class="footer-copy">
+      2026 © La Mia Rosa. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+/* HEADER */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 120);
+});
+
+/* FADE */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('show');
+      observer.unobserve(e.target);
+    }
+  });
+},{ threshold: 0.25 });
+
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+/* COLOR SWITCH */
+const hero = document.getElementById('heroImage');
+const gallery = document.getElementById('galleryImage');
+
+const images = {
+  dark: 'images/product6.jpg',
+  light: 'images/fitted-long-sleeve-light-1.jpg'
+};
+
+document.querySelectorAll('.color-dot').forEach(dot => {
+  dot.addEventListener('click', () => {
+    const color = dot.dataset.color;
+
+    hero.style.opacity = 0;
+    gallery.style.opacity = 0;
+
+    setTimeout(() => {
+      hero.src = images[color];
+      gallery.src = images[color];
+      hero.style.opacity = 1;
+      gallery.style.opacity = 1;
+    }, 200);
+
+    document.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+  });
+});
+
+/* RELATED SCROLL */
+function scrollRelated(dir) {
+  const grid = document.getElementById('relatedGrid');
+  grid.scrollBy({ left: grid.offsetWidth * dir, behavior: 'smooth' });
+}
+
+/* LANGUAGE */
+const translations = {
+  en: {
+    tagline: "Modern Luxury Womenswear",
+    nav_wardrobe: "Wardrobe",
+    nav_philosophy: "Philosophy",
+    nav_reach: "Reach Us",
+    p_title: "Second Skin Top",
+    p_tagline: "Second-skin feel · Minimal seams",
+    cta: "Add to cart",
+    idea: "The Idea",
+    story: "Designed to disappear on the body.<br>To move with you, not over you.<br><br>It becomes a layer of comfort —<br>not a statement.",
+    fabric: "Fabric",
+    origin: "Origin",
+    touch: "Touch",
+    season: "Season",
+    fit: "Fit",
+    length: "Length",
+    construction: "Construction",
+    care: "Care",
+    also: "You may also like",
+    footer_copy: "2026 © La Mia Rosa. All rights reserved.",
+    footer_note: "Designed with intention. Crafted for women who choose less, but better."
+  },
+  tr: {
+    tagline: "Modern Lüks Kadın Giyimi",
+    nav_wardrobe: "Gardırop",
+    nav_philosophy: "Felsefe",
+    nav_reach: "İletişim",
+    p_title: "İkinci Ten Üst",
+    p_tagline: "İkinci ten hissi · Minimal dikiş",
+    cta: "Sepete ekle",
+    idea: "Fikir",
+    story: "Vücutta kaybolmak için tasarlandı.<br>Seninle hareket eder, üstünde değil.<br><br>Bir konfor katmanıdır —<br>bir ifade değil.",
+    fabric: "Kumaş",
+    origin: "Menşei",
+    touch: "Doku",
+    season: "Sezon",
+    fit: "Kalıp",
+    length: "Uzunluk",
+    construction: "Yapı",
+    care: "Bakım",
+    also: "Bunları da sevebilirsiniz",
+    footer_copy: "2026 © La Mia Rosa. Tüm hakları saklıdır.",
+    footer_note: "Niyetle tasarlandı. Daha az ama daha iyisini seçen kadınlar için."
+  }
+};
+
+document.querySelectorAll('.lang').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const lang = btn.dataset.lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el.innerHTML = translations[lang][el.dataset.i18n];
+    });
+  });
+});
+</script>
+
+</body>
+</html>

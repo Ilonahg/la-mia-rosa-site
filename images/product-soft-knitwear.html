@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft Knitwear — La Mia Rosa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- STYLES — ТВОЇ -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+</head>
+
+<body class="product-body">
+
+<!-- ================= HEADER ================= -->
+
+<header class="header header-product">
+  <div class="header-grid">
+
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline">Modern Luxury Womenswear</span>
+    </a>
+
+    <nav class="nav">
+      <a href="collections.html">Wardrobe</a>
+      <a href="about.html">Philosophy</a>
+      <a href="contact.html">Reach Us</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button class="lang active">EN</button>
+      <span>|</span>
+      <button class="lang">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<main class="product-page">
+
+<!-- ================= HERO ================= -->
+
+<section class="product-hero fade">
+  <div class="product-hero-grid">
+
+    <div class="product-info">
+      <h1 class="product-title">Soft Knitwear</h1>
+
+      <p class="product-tagline">
+        Natural warmth —<br>
+        effortless and quiet.
+      </p>
+
+      <div class="product-price">€190</div>
+      <div class="product-rating">★★★★★</div>
+
+      <a href="#" class="product-cta">Add to cart</a>
+    </div>
+
+    <div class="product-image">
+      <img src="images/soft-knit-sweater-1.jpg" alt="Soft Knitwear">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="product-gallery fade">
+  <div class="gallery-item">
+    <img src="images/soft-knit-sweater-2.jpg" alt="Soft Knitwear detail">
+  </div>
+</section>
+
+<!-- ================= STORY ================= -->
+
+<section class="product-story fade">
+  <div class="story-inner">
+
+    <h2 class="story-title">The Idea</h2>
+
+    <p class="story-text">
+      Soft Knitwear was designed to feel familiar from the first touch.<br>
+      It moves naturally with the body, without tension or weight.<br><br>
+      A piece for everyday calm —<br>
+      warm, breathable, and effortless.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= DETAILS ================= -->
+
+<section class="product-details fade">
+  <div class="details-grid">
+
+    <div class="details-col">
+      <p><strong>Fabric</strong><br>Natural fibers</p>
+      <p><strong>Origin</strong><br>Europe</p>
+      <p><strong>Touch</strong><br>Soft, breathable</p>
+      <p><strong>Season</strong><br>All year</p>
+    </div>
+
+    <div class="details-col">
+      <p><strong>Fit</strong><br>Relaxed</p>
+      <p><strong>Length</strong><br>Hip</p>
+      <p><strong>Closure</strong><br>None</p>
+      <p><strong>Care</strong><br>Hand wash cold</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RELATED ================= -->
+
+<section class="product-related fade">
+
+  <div class="related-header">
+    <h3 class="related-title">You may also like</h3>
+  </div>
+
+  <div class="related-grid" id="relatedGrid">
+
+    <article class="related-item">
+      <a href="product-wool-vest.html">
+        <img src="images/product1.jpg" alt="Tailored Wool Vest">
+      </a>
+      <a href="product-wool-vest.html" class="related-name">
+        Tailored Wool Vest
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€240</span>
+      <p class="micro">Structured warmth · Italian wool</p>
+    </article>
+
+    <article class="related-item">
+      <a href="product-second-skin.html">
+        <img src="images/product6.jpg" alt="Second Skin Top">
+      </a>
+      <a href="product-second-skin.html" class="related-name">
+        Second Skin Top
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€140</span>
+      <p class="micro">Second-skin feel · Minimal seams</p>
+    </article>
+
+    <article class="related-item">
+      <a href="product-urban-knit.html">
+        <img src="images/product7.jpg" alt="Urban Knit Dress">
+      </a>
+      <a href="product-urban-knit.html" class="related-name">
+        Urban Knit Dress
+      </a>
+      <div class="rating">★★★★★</div>
+      <span class="price">€290</span>
+      <p class="micro">Urban elegance · Effortless fit</p>
+    </article>
+
+  </div>
+
+  <div class="related-nav">
+    <button onclick="scrollRelated(-1)">‹</button>
+    <button onclick="scrollRelated(1)">›</button>
+  </div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer footer-center">
+  <div class="footer-inner">
+    <p>2026 © La Mia Rosa. All rights reserved.</p>
+    <p class="footer-note">
+      Designed with intention. Crafted for women who choose less, but better.
+    </p>
+  </div>
+</footer>
+
+<!-- ================= SCRIPT — ТВОЯ ЛОГІКА ================= -->
+
+<script>
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 120);
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+function scrollRelated(dir) {
+  const grid = document.getElementById('relatedGrid');
+  grid.scrollBy({
+    left: dir * grid.offsetWidth,
+    behavior: 'smooth'
+  });
+}
+</script>
+
+</body>
+</html>

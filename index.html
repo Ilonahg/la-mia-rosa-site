@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Mia Rosa — Modern Luxury Womenswear</title>
+
+  <link rel="icon" href="favicon3.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= ANNOUNCEMENT BAR ================= -->
+<div class="announcement-bar">
+  <span class="announcement-text active">Return & Exchange Guarantee</span>
+  <span class="announcement-text">Free shipping on orders of ₺2500 and above</span>
+  <span class="announcement-text">Launch Special: Up to 40% Discount</span>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-grid">
+
+    <a href="index.html" class="logo">
+      <span class="brand">LA MIA ROSA</span>
+      <span class="tagline" data-i18n="tagline">
+        Modern Luxury Womenswear
+      </span>
+    </a>
+
+    <nav class="nav">
+      <a href="collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="about.html" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="contact.html" data-i18n="nav_reach">Reach Me</a>
+    </nav>
+
+    <div class="lang-switch">
+      <button class="lang active" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang" data-lang="tr">TR</button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="background-image:url('images/main-photo.jpg');">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <h1 class="hero-title" data-i18n="hero_title" data-animate>
+      Poise in<br>Every Detail
+    </h1>
+
+    <p class="hero-subtitle" data-i18n="hero_subtitle" data-animate>
+      Clothing shaped by calm confidence.<br>
+      Designed to be felt — not announced.
+    </p>
+
+    <a href="collections.html" class="cta-editorial" data-i18n="hero_cta" data-animate>
+      Explore the Collection
+    </a>
+
+  </div>
+</section>
+
+<!-- ================= SIGNATURE ================= -->
+<section class="signature">
+  <div class="signature-inner">
+    <span data-i18n="sig_1" data-animate>Designed in silence</span>
+    <span data-i18n="sig_2" data-animate>Made to endure</span>
+    <span data-i18n="sig_3" data-animate>Worn with intention</span>
+  </div>
+</section>
+
+<!-- ================= MANIFEST ================= -->
+<section class="manifest">
+
+  <div class="manifest-rose">
+    <img src="images/rose3.jpg" alt="La Mia Rosa signature rose">
+  </div>
+
+  <div class="manifest-inner">
+
+    <h2 class="manifest-title" data-i18n="manifest_title" data-animate>
+      Quiet Femininity
+    </h2>
+
+    <p class="manifest-text" data-i18n="manifest_text_1" data-animate>
+      Softness is not fragility.<br>
+      Strength moves in silence.
+    </p>
+
+    <p class="manifest-text" data-i18n="manifest_text_2" data-animate>
+      Like a rose after dusk — composed, deep, intentional.<br>
+      Created to endure beyond seasons.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= WARDROBE PREVIEW ================= -->
+<section class="wardrobe-preview">
+  <div class="wardrobe-inner">
+
+    <h2 class="wardrobe-title" data-i18n="wardrobe_title" data-animate>
+      The Wardrobe
+    </h2>
+
+    <p class="wardrobe-text" data-i18n="wardrobe_text" data-animate>
+      A restrained selection of silhouettes.<br>
+      Created to live with you, not replace you.
+    </p>
+
+    <a href="collections.html"
+       class="wardrobe-link"
+       data-i18n="wardrobe_cta"
+       data-animate>
+      View silhouettes
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer footer--light">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      LA MIA ROSA
+    </div>
+
+    <div class="footer-note">
+      Designed in silence · Made to endure · Worn with intention
+    </div>
+
+    <div class="footer-copy">
+      2026 © La Mia Rosa. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+/* HEADER SCROLL */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+/* TRANSLATIONS */
+const translations = {
+  en: {
+    tagline: "Modern Luxury Womenswear",
+    nav_wardrobe: "Wardrobe",
+    nav_philosophy: "Philosophy",
+    nav_reach: "Reach me",
+    hero_title: "Poise in<br>Every Detail",
+    hero_subtitle: "Clothing shaped by calm confidence.<br>Designed to be felt — not announced.",
+    hero_cta: "Explore the Collection",
+    sig_1: "Designed in silence",
+    sig_2: "Made to endure",
+    sig_3: "Worn with intention",
+    manifest_title: "Quiet Femininity",
+    manifest_text_1: "Softness is not fragility.<br>Strength moves in silence.",
+    manifest_text_2: "Like a rose after dusk — composed, deep, intentional.<br>Created to endure beyond seasons.",
+    wardrobe_title: "The Wardrobe",
+    wardrobe_text: "A restrained selection of silhouettes.<br>Created to live with you, not replace you.",
+    wardrobe_cta: "View silhouettes"
+  },
+  tr: {
+    tagline: "Modern Lüks Kadın Giyimi",
+    nav_wardrobe: "Gardırop",
+    nav_philosophy: "Felsefe",
+    nav_reach: "İletişim",
+    hero_title: "Her Detayda<br>Dingin Zarafet",
+    hero_subtitle: "Sakin bir özgüvenle şekillenen tasarımlar.<br>Hissedilmek için — duyurulmak için değil.",
+    hero_cta: "Koleksiyonu Keşfet",
+    sig_1: "Sessizlikte tasarlandı",
+    sig_2: "Uzun ömür için üretildi",
+    sig_3: "Niyetle giyildi",
+    manifest_title: "Sessiz Feminenlik",
+    manifest_text_1: "Yumuşaklık kırılganlık değildir.<br>Güç sessizlikte ilerler.",
+    manifest_text_2: "Alacakaranlıktan sonra bir gül gibi — derin, dengeli, bilinçli.<br>Mevsimlerin ötesinde var olmak için yaratıldı.",
+    wardrobe_title: "Gardırop",
+    wardrobe_text: "Sade ve zamansız silüetler.<br>Hayatına eşlik etmek için, onu tüketmek için değil.",
+    wardrobe_cta: "Silüetleri Gör"
+  }
+};
+
+/* LANGUAGE SWITCH */
+const langButtons = document.querySelectorAll('.lang');
+const elements = document.querySelectorAll('[data-i18n]');
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    langButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const lang = btn.dataset.lang;
+
+    elements.forEach(el => {
+      el.innerHTML = translations[lang][el.dataset.i18n];
+    });
+  });
+});
+
+/* FADE ON SCROLL */
+const animatedElements = document.querySelectorAll('[data-animate]');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+animatedElements.forEach(el => observer.observe(el));
+</script>
+
+<script src="js/announcement.js"></script>
+
+</body>
+</html>
