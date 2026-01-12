@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Mia Rosa — Modern Luxury Womenswear</title>
 
-  <link rel="icon" href="favicon3.png">
+  <link rel="icon" href="./favicon3.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -29,17 +29,15 @@
 <header class="header">
   <div class="header-grid">
 
-    <a href="index.html" class="logo">
+    <a href="./index.html" class="logo">
       <span class="brand">LA MIA ROSA</span>
-      <span class="tagline" data-i18n="tagline">
-        Modern Luxury Womenswear
-      </span>
+      <span class="tagline" data-i18n="tagline">Modern Luxury Womenswear</span>
     </a>
 
     <nav class="nav">
-      <a href="collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
-      <a href="about.html" data-i18n="nav_philosophy">Philosophy</a>
-      <a href="contact.html" data-i18n="nav_reach">Reach Me</a>
+      <a href="./collections.html" data-i18n="nav_wardrobe">Wardrobe</a>
+      <a href="./about.html" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="./contact.html" data-i18n="nav_reach">Reach Me</a>
     </nav>
 
     <div class="lang-switch">
@@ -54,7 +52,7 @@
 <main>
 
 <!-- ================= HERO ================= -->
-<section class="hero" style="background-image:url('images/main-photo.jpg');">
+<section class="hero" style="background-image:url('./images/main-photo.jpg');">
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
@@ -68,7 +66,7 @@
       Designed to be felt — not announced.
     </p>
 
-    <a href="collections.html" class="cta-editorial" data-i18n="hero_cta" data-animate>
+    <a href="./collections.html" class="cta-editorial" data-i18n="hero_cta" data-animate>
       Explore the Collection
     </a>
 
@@ -88,7 +86,7 @@
 <section class="manifest">
 
   <div class="manifest-rose">
-    <img src="images/rose3.jpg" alt="La Mia Rosa signature rose">
+    <img src="./images/rose3.jpg" alt="La Mia Rosa signature rose">
   </div>
 
   <div class="manifest-inner">
@@ -123,7 +121,7 @@
       Created to live with you, not replace you.
     </p>
 
-    <a href="collections.html"
+    <a href="./collections.html"
        class="wardrobe-link"
        data-i18n="wardrobe_cta"
        data-animate>
@@ -139,9 +137,7 @@
 <footer class="footer footer--light">
   <div class="footer-inner">
 
-    <div class="footer-brand">
-      LA MIA ROSA
-    </div>
+    <div class="footer-brand">LA MIA ROSA</div>
 
     <div class="footer-note">
       Designed in silence · Made to endure · Worn with intention
@@ -156,13 +152,11 @@
 
 <!-- ================= SCRIPTS ================= -->
 <script>
-/* HEADER SCROLL */
 const header = document.querySelector('.header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 80);
 });
 
-/* TRANSLATIONS */
 const translations = {
   en: {
     tagline: "Modern Luxury Womenswear",
@@ -202,7 +196,6 @@ const translations = {
   }
 };
 
-/* LANGUAGE SWITCH */
 const langButtons = document.querySelectorAll('.lang');
 const elements = document.querySelectorAll('[data-i18n]');
 
@@ -210,16 +203,11 @@ langButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     langButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
     const lang = btn.dataset.lang;
-
-    elements.forEach(el => {
-      el.innerHTML = translations[lang][el.dataset.i18n];
-    });
+    elements.forEach(el => el.innerHTML = translations[lang][el.dataset.i18n]);
   });
 });
 
-/* FADE ON SCROLL */
 const animatedElements = document.querySelectorAll('[data-animate]');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -233,7 +221,7 @@ const observer = new IntersectionObserver(entries => {
 animatedElements.forEach(el => observer.observe(el));
 </script>
 
-<script src="js/announcement.js"></script>
+<script src="./js/announcement.js"></script>
 
 </body>
 </html>
